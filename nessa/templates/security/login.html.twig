@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+    <style>
+        .form-container {
+            position: sticky;
+            max-width: 500px;
+
+            margin: -100px auto;
+
+            padding: 30px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            z-index: 3;
+        }
+
+        .form-title {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            font-family: 'Montserrat', sans-serif;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
+            font-family: 'Montserrat', sans-serif;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .register-link {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .register-link a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .header-invisible{
+            opacity: 0;
+            padding: 115px 20px 30px 20px;
+            z-index: -1;
+        }
+
+    </style>
+    <div class="header-invisible"></div>
+
+    <div class="form-container">
+        <h2 class="form-title">Connexion</h2>
+
+        <form method="post">
+            <div class="form-group">
+                <label for="email">Adresse email</label>
+                <input type="email" id="email" name="_username" value="{{ last_username }}" required autofocus>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="_password" required>
+            </div>
+
+            {# Si un paramètre "error" existe dans l'URL, on l'affiche ici #}
+            {% if app.request.query.get('error') %}
+                <div class="error-message form-group">
+                    {{ app.request.query.get('error') }}
+                </div>
+            {% endif %}
+
+            <div class="form-group">
+                <button class="btn" type="submit">Se connecter</button>
+            </div>
+        </form>
+
+        <div class="register-link">
+            <p>Pas de compte ? <a href="{{ path('register') }}">Créez-en un</a></p>
+        </div>
+    </div>
+{% endblock %}

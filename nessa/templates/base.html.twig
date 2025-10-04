@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mon Site{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    {% block stylesheets %}
+        <style>
+
+            /* Style global pour le corps de la page */
+            body, html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            /* Barre de navigation avec Flexbox */
+            nav {
+                position: sticky;
+                display: flex;
+                justify-content: space-between; /* Espacer les éléments à gauche et à droite */
+                align-items: center; /* Centrer verticalement */
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #143358;
+                padding: 15px;
+                color: #143358;
+                z-index: 1000;
+            }
+
+            .nav-right{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-right: 30px;
+            }
+
+            /* Liens de la barre de navigation */
+            nav a {
+                color: white;
+                margin-top: 20px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            /* titre de la barre de navigation */
+            .titre {
+                color: #ffffff;
+                font-size: 30px;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            .don-button,
+            .login-button {
+                font-family: 'Montserrat', sans-serif;
+                width: 120px; /* même largeur pour les deux */
+                text-align: center;
+                background-color: white;
+                color: #143358;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: bold;
+                transition: transform 0.3s;
+            }
+
+            .don-button:hover,
+            .login-button:hover {
+                transform: translateY(-5px);
+            }
+
+            .wave-separator1 {
+                margin-top: -95px;
+
+                display: block;
+                width: 100%;
+                margin-bottom: -1px; /* éviter ligne entre couleurs */
+                z-index: -2;
+
+            }
+
+        </style>
+    {% endblock %}
+
+</head>
+<body>
+<!-- Barre de navigation -->
+<nav>
+    <a class="titre" href="{{ path('app_home') }}">Annales Étudiantes</a>
+    <div class="nav-right">
+        <a href="#" class="don-button">DON</a>
+        {% if app.user %}
+            <a href="{{ path('app_profile') }}" class="login-button">PROFIL</a>
+        {% else %}
+            <a href="{{ path('app_login') }}" class="login-button">CONNEXION</a>
+        {% endif %}
+    </div>
+</nav>
+
+<svg class="wave-separator1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150">
+    <path fill="#143358FF" fill-opacity="1" d="M0,96L80,112C160,128,320,160,480,144C640,128,800,64,960,64C1120,64,1280,128,1360,160L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+</svg>
+
+<!-- Contenu spécifique à chaque page -->
+<div class="container">
+    {% block body %}{% endblock %}
+</div>
+
+{% block javascripts %}
+    <script src="{{ asset('js/vue.global.prod.js')}}"></script>
+    <script src="{{ asset('js/passwordModal.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+{% endblock %}
+</body>
+</html>

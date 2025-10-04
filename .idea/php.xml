@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="highlightLevel" value="WARNING" />
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/nessa/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/nessa/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/nessa/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/nessa/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/polyfill-php84" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/nessa/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/runtime" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/nessa/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/type-info" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/password-hasher" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/nessa/vendor/composer" />
+      <path value="$PROJECT_DIR$/nessa/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/nessa/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/nessa/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/nessa/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/maker-bundle" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/password-hasher" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/polyfill-intl-icu" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/polyfill-php84" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/runtime" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/type-info" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/composer" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/test/nessa/vendor/symfony/finder" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
+  <component name="PhpStanOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+</project>

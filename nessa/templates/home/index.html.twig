@@ -1,0 +1,158 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue dans le Jardin de la Connaissance{% endblock %}
+
+{% block body %}
+    <style>
+        /* Styles pour la page d'accueil */
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('{{ asset('images/inscription.png') }}');
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        .wave-separator {
+            margin-top: -150px;
+            transform: rotate(180deg);
+            display: block;
+            width: 100%;
+            margin-bottom: -1px; /* éviter ligne entre couleurs */
+            z-index: 2;
+        }
+
+        .content {
+            height: 52vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            align-items: center;
+            text-align: center;
+            color: white;
+
+            //height: 100vh;
+            //display: flex;
+            //flex-direction: column;
+            //justify-content: center;
+            //align-items: center;
+            //text-align: center;
+            //color: white;
+        }
+
+        .main-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            margin-top: -150px; //-------------
+        }
+
+        .description {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            max-width: 800px;
+            z-index: 5; //-------------
+        }
+
+        .section-below {
+            background: linear-gradient(to top, #001a33 50%, rgba(0, 0, 0, 0) 100%);
+            color: white;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .box {
+            background: linear-gradient(180deg, rgba(20, 51, 88, 1), rgba(23, 74, 139, 1));
+            border-radius: 10px;
+            //border: 1px solid #ddd;
+            padding: 50px;
+            text-align: left;
+            width: 350px;
+            height: 275px;
+            min-height: 250px;
+            transition: transform 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+        }
+
+        .box img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 8px;
+            filter: invert(1);
+        }
+
+        .box-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .box-text {
+            font-size: 20px;
+        }
+
+        .text-muted{
+            font-size: 1rem;
+            padding-top: 50px;
+        }
+
+        .text-red {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+    </style>
+    <div class="background"></div>
+
+    <div class="content">
+        <h1 class="main-text">
+            Bienvenue dans le jardin de la connaissance
+        </h1>
+        <p class="description">
+            Ce site a été conçu par des étudiants pour des étudiants. En vous inscrivant
+            sur ce site, vous accédez à différentes ressources universitaires (épreuves
+            d'examen, fiches de Travaux Dirigés, corrigés, fiches de révisions…).
+            L'ensemble des ressources est édité par les étudiants.
+        </p>
+    </div>s
+    <!-- Section en dessous -->
+    <div class="section-below">
+        <a href="{{ path('app_consult_formation') }}" style="text-decoration: none; color: inherit;">
+            <div class="box">
+                <img src="{{ asset('images/fichier.png') }}" alt="Consulter">
+                <h1 class="box-title">Consulter</h1>
+                <p class="box-text">Il est temps de réviser !
+                    Pour t’accompagner dans tes
+                    études, nous mettons à disposition
+                    ces annales regroupant:
+                    les fiches de TD, épreuves
+                    d’examens, les corrigés, les fiches
+                    de révisions…</p>
+            </div>
+        </a>
+        <a href="{{ app.user ? path('app_edition') : path('app_login') }}" style="text-decoration: none; color: inherit;">
+            <div class="box">
+                <img src="{{ asset('images/stylo.png') }}" alt="Éditer">
+                <h1 class="box-title">Éditer</h1>
+                <p class="box-text">Ajouter un document !</p>
+                {% if not app.user %}
+                    <p class="text-muted" >Vous devez être <span class="text-red">connecté</span> pour éditer</p>
+                {% endif %}
+            </div>
+        </a>
+    </div>
+{% endblock %}

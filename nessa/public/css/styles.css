@@ -1,0 +1,80 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* Le fond avec l'image */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/inscription.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Légère flou sur l'image */
+    z-index: -1; /* Pour que l'image soit derrière le texte */
+}
+
+/* Contenu centré */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+/* Texte principal */
+.main-text {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Description sous le texte principal */
+.description {
+    font-size: 1.5rem;
+}
+
+/* Barre de navigation avec Flexbox */
+nav {
+    display: flex;
+    justify-content: space-between; /* Espacer les éléments à gauche et à droite */
+    align-items: center; /* Centrer verticalement */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2d3e50; /* Bleu foncé */
+    padding: 15px;
+    color: white;
+    z-index: 1000;
+}
+
+/* Liens de la barre de navigation */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Le bouton DON */
+.don-button {
+    background-color: #0066cc; /* Bleu clair */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 20px; /* Décale le bouton un peu plus à gauche */
+}
+
+.don-button:hover {
+    background-color: #004d99;
+}

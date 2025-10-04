@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consultation des Formations{% endblock %}
+
+{% block body %}
+
+    <style>
+        body, html {
+            overflow-y: hidden;
+            width: 100%; /* Assure que la largeur de la page ne dépasse pas 100% de l'écran */
+        }
+
+        .consultation-page{
+            background-color: #ffffff;
+            min-height: 100vh;
+        }
+
+        .page-title{
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 3rem;
+            color: #143358;
+            margin-bottom: 150px;
+        }
+
+        .formations-grid{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 0 40px;
+            margin-top: 40px;
+        }
+
+        .formation-card{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card-content{
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(180deg, rgba(20, 51, 88, 1), rgba(23, 74, 139, 1));
+            //border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card-content:hover {
+            transform: translateY(-10px);
+        }
+
+        .formation-title{
+            font-size: 2rem;
+            color: white;
+        }
+
+        .return-button {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: linear-gradient(180deg, rgba(20, 51, 88, 1), rgba(23, 74, 139, 1));
+            border-radius: 5px;
+            position: absolute; /* Positionne le bouton à gauche */
+            left: 40px; /* Distance du bord gauche de l'écran */
+            transition: transform 0.3s;
+        }
+
+        .return-button:hover {
+            transform: translateY(-5px);
+        }
+
+    </style>
+
+    <div class="consultation-page">
+        <div class="container">
+            <div class="header">
+                <a href="{{ path('app_home')}}" class="return-button">←</a>
+                <h1 class="page-title">VEUILLEZ SÉLECTIONNER UNE FORMATION</h1>
+            </div>
+            <div class="formations-grid">
+                {% for formation in formations %}
+                    <a href="{{ path('app_consult_niveau', { 'id': formation.id }) }}" class="formation-card">
+                        <div class="card-content">
+                            <h2 class="formation-title">{{ formation.nom }}</h2>
+                        </div>
+                    </a>
+                {% else %}
+                    <p>Aucune formation n'est disponible</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

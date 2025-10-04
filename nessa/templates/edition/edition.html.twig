@@ -1,0 +1,166 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une Annale{% endblock %}
+
+{% block body %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #143358;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        select, input[type="file"] {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        select:disabled {
+            background-color: #eee;
+            cursor: not-allowed;
+        }
+        select:focus, input[type="file"]:focus {
+            outline: none;
+            border-color: #143358;
+        }
+        button {
+            width: 100%;
+            background: linear-gradient(180deg, #143358, #174a8b);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1.1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(180deg, #174a8b, #143358);
+        }
+        .alert {
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+
+    <h1>Ajouter une Annale</h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endfor %}
+
+    <form method="post" action="{{ path('app_edition_upload') }}" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="formation">Formation</label>
+            <select id="formation" name="formation" class="form-control" required>
+                <option value="">-- Sélectionner une formation --</option>
+                {% for formation in formations %}
+                    <option value="{{ formation.id }}">{{ formation.nom }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="niveau">Niveau</label>
+            <select id="niveau" name="niveau" class="form-control" required>
+                <option value="">-- Sélectionner une formation --</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="matiere">Matière</label>
+            <select id="matiere" name="matiere" class="form-control" required>
+                <option value="">-- Sélectionner une formation --</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="type">Type</label>
+            <select id="type" name="type" class="form-control" required>
+                <option value="">-- Sélectionner une formation --</option>
+            </select>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="pdfFile">Fichier PDF</label>
+            <input type="file" name="pdfFile" id="pdfFile" class="form-control" accept="application/pdf" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4">Envoyer</button>
+    </form>
+    <script>
+        const niveauxData = {{ niveaux|json_encode|raw }};
+        const matieresData = {{ matieres|json_encode|raw }};
+        const typesData = {{ types|json_encode|raw }};
+
+        document.getElementById('formation').addEventListener('change', function () {
+            const formationId = this.value;
+            const niveaux = niveauxData.filter(n => n.formation.id == formationId);
+            updateSelect('niveau', niveaux);
+            updateSelect('matiere', []);
+            updateSelect('type', []);
+        });
+
+        document.getElementById('niveau').addEventListener('change', function () {
+            const niveauId = this.value;
+            const matieres = matieresData.filter(m => m.niveau.id == niveauId);
+            updateSelect('matiere', matieres);
+            updateSelect('type', []);
+        });
+
+        document.getElementById('matiere').addEventListener('change', function () {
+            const matiereId = this.value;
+            const types = typesData.filter(t => t.matiere.id == matiereId);
+            updateSelect('type', types);
+        });
+
+        function updateSelect(id, items) {
+            const select = document.getElementById(id);
+            select.innerHTML = '<option value="">-- Sélectionner --</option>';
+            items.forEach(item => {
+                select.innerHTML += `<option value="${item.id}">${item.nom}</option>`;
+            });
+        }
+    </script>
+
+{% endblock %}

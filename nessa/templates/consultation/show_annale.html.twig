@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Annale{% endblock %}
+
+{% block body %}
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .consultation-page {
+            background-color: #ffffff;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .return-button {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: linear-gradient(180deg, rgba(20, 51, 88, 1), rgba(23, 74, 139, 1));
+            border-radius: 5px;
+            position: absolute;
+            left: 40px;
+            transition: transform 0.3s;
+        }
+
+        .return-button:hover {
+            transform: translateY(-5px);
+        }
+
+        .page-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            color: #143358;
+            margin: 0;
+            text-align: center;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: calc(100% - 80px); /* 80px ≈ hauteur du header */
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .return-button {
+                font-size: 1.5rem;
+                padding: 8px 16px;
+            }
+        }
+
+
+        .author-label {
+            position: absolute;
+            bottom: 60px;
+            left: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: #143358;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            user-select: none;
+        }
+
+        .date-label{
+            position: absolute;
+            bottom: 25px;
+            left: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: #143358;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            user-select: none;
+        }
+    </style>
+
+    <div class="consultation-page">
+        <div class="container">
+            <div class="header">
+                <a href="{{ path('app_consult_type_annales', {'id': type.id}) }}" class="return-button">←</a>
+                <h1 class="page-title">{{ annale.nom|upper }}</h1>
+            </div>
+
+            <iframe src="{{ asset(annale.cheminFichier) }}" class="pdf-viewer"></iframe>
+        </div>
+    </div>
+    <div class="author-label">
+        Auteur : {{ annale.auteur.prenom }} {{ annale.auteur.nom }}
+    </div>
+    <div class="date-label">
+        Upload : {{ annale.dateUpload|date('d/m/Y') }}
+    </div>
+{% endblock %}

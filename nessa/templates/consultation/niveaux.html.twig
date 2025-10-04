@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Niveaux de {{ formation.nom }}{% endblock %}
+
+{% block body %}
+    <style>
+        body, html {
+            overflow-y: hidden;
+            width: 100%; /* Assure que la largeur de la page ne dépasse pas 100% de l'écran */
+        }
+
+        .consultation-page {
+            background-color: #ffffff;
+            min-height: 100vh;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centre horizontalement le titre */
+            margin-bottom: 150px;
+        }
+
+        .return-button {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: linear-gradient(180deg, rgba(20, 51, 88, 1), rgba(23, 74, 139, 1));
+            border-radius: 5px;
+            position: absolute; /* Positionne le bouton à gauche */
+            left: 40px; /* Distance du bord gauche de l'écran */
+            transition: transform 0.3s;
+        }
+
+        .return-button:hover {
+            transform: translateY(-5px);
+        }
+
+        .page-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            color: #143358;
+            margin: 0; /* Supprime toute marge */
+            text-align: center; /* Centrer le titre */
+        }
+
+        .niveaux-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 0 40px;
+            margin-top: 40px;
+            max-width: 100%; /* Assure que le conteneur ne dépasse pas la largeur de l'écran */
+        }
+
+        .niveau-card {
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card-content {
+            background: linear-gradient(180deg, rgba(20, 51, 88, 1), rgba(23, 74, 139, 1));
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card-content:hover {
+            transform: translateY(-10px);
+        }
+
+        .niveau-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: white;
+        }
+    </style>
+    <div class="consultation-page">
+        <div class="container">
+            <div class="header">
+                <a href="{{ path('app_consult_formation') }}" class="return-button">←</a>
+                <h1 class="page-title">VEUILLEZ SÉLECTIONNER UN NIVEAU</h1>
+            </div>
+            <div class="niveaux-grid">
+                {% for niveau in niveaux %}
+                    <a href="{{ path('app_consult_matiere', { 'id': niveau.id }) }}" class="niveau-card">
+                        <div class="card-content">
+                            <h2 class="niveau-title">{{ niveau.nom }}</h2>
+                        </div>
+                    </a>
+                {% else %}
+                    <p>Aucun niveau disponible pour cette formation.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

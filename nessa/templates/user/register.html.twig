@@ -1,0 +1,192 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+    <style>
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        .form-container {
+            font-family: 'Montserrat', sans-serif;
+            max-width: 900px;
+            margin: -100px auto;
+            padding: 30px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            z-index: 5;
+        }
+
+        .form-title {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .form-column {
+            width: 48%;
+            margin-right: 2.5%;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #004d99;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9rem;
+            margin: 5px 0 0 0;
+        }
+
+        .header-banner h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        span{
+            color: red;
+            font-weight: bold;
+        }
+
+        select{
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .header-invisible{
+            opacity: 0;
+            padding: 115px 20px 30px 20px;
+            z-index: -1;
+        }
+
+    </style>
+    <div class="background"></div>
+    <div class="header-invisible"></div>
+
+    <div class="form-container">
+        <h2 class="form-title">Inscription</h2>
+        <form method="post">
+            {{ form_start(registrationForm) }}
+
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        {{ form_label(registrationForm.nom) }}
+                        <span class="required">*</span>
+                        {{ form_widget(registrationForm.nom) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(registrationForm.prenom) }}
+                        <span class="required">*</span>
+                        {{ form_widget(registrationForm.prenom) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(registrationForm.email) }}
+                        <span class="required">*</span>
+                        {{ form_widget(registrationForm.email) }}
+                        {% for error in registrationForm.email.vars.errors %}
+                            <span style="color: red;">{{ error.message }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(registrationForm.password) }}
+                        <span class="required">*</span>
+                        {{ form_widget(registrationForm.password) }}
+                        {% for error in registrationForm.password.vars.errors %}
+                            <span style="color: red;">{{ error.message }}</span>
+                        {% endfor %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(registrationForm.confirm_password) }}
+                        <span class="required">*</span>
+                        {{ form_widget(registrationForm.confirm_password) }}
+                        {% for error in registrationForm.confirm_password.vars.errors %}
+                            <span style="color: red;">{{ error.message }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-column">
+                    <div class="form-group">
+                        {{ form_label(registrationForm.universite) }}
+                        <span class="required">*</span>
+                        {{ form_widget(registrationForm.universite) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(registrationForm.telephone) }}
+                        <span class="required">*</span>
+                        {{ form_widget(registrationForm.telephone) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(registrationForm.pseudo) }}
+                        <span class="required">*</span>
+                        {{ form_widget(registrationForm.pseudo) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(registrationForm.formation) }}
+                        <span class="required">*</span>
+                        {{ form_widget(registrationForm.formation) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(registrationForm.niveau) }}
+                        <span class="required">*</span>
+                        {{ form_widget(registrationForm.niveau) }}
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button class="btn" type="submit">Créer mon compte</button>
+            </div>
+
+            {{ form_end(registrationForm) }}
+        </form>
+    </div>
+{% endblock %}
